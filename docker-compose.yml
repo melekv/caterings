@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  server:
+    # image: php:8-apache
+    build: ./
+    container_name: server
+    ports:
+      - 80:80
+    volumes:
+      - ./src:/var/www
+      - ./src/public:/var/www/html
+
+  db:
+    image: mariadb
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: catering
+    ports:
+      - 3306:3306
+    volumes:
+      - ./database:/var/lib/mysql
+
+  myadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - 8080:80

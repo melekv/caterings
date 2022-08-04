@@ -1,0 +1,35 @@
+.index {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: auto;
+    row-gap: 10px;
+}
+
+.grid label, .grid input {
+    padding: 5px;
+}
+
+.grid input {
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.btn-center {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
